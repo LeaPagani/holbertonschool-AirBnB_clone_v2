@@ -7,6 +7,7 @@ from sqlalchemy import Column, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
+
 class BaseModel:
     """A base class for all hbnb models"""
     id = Column(String(60), unique=True, primary_key=True, nullable=False)
@@ -42,7 +43,7 @@ class BaseModel:
         dictionary['created_at'] = self.created_at.isoformat()
         dictionary['updated_at'] = self.updated_at.isoformat()
         return dictionary
-    
+
     def delete(self):
         """Delete the current instance from the storage"""
         models.storage.delete(self)
