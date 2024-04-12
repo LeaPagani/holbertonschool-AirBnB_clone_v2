@@ -12,6 +12,7 @@ def hello():
     """
     return 'Hello HBNB!'
 
+
 @app.route('/hbnb')
 def hbnb():
     """Return string when route queried
