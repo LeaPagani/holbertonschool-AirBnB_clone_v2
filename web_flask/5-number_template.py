@@ -2,7 +2,7 @@
 """Start web application with two routings
 """
 
-from flask import Flask, render_template
+from flask import Flask
 app = Flask(__name__)
 
 
@@ -36,9 +36,7 @@ def python_with_text(text='is cool'):
 
 
 @app.route('/number/<int:n>')
-def number(n=None):
-    """Allow request if path variable is a valid integer
-    """
+def number_n(n=None):
     return str(n) + ' is a number'
 
 
