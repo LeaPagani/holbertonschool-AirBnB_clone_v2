@@ -3,30 +3,33 @@
 """
 
 from flask import Flask
+from urllib.parse import unquote_plus
+
 app = Flask(__name__)
 
 
-app.route ('/')
-def hello():
+app.route('/', strict_slashes=False)
+def hello_hbnb():
         return 'Hello HBNB!'
 
 
-app.route ('/hbnb')
+app.route('/hbnb', strict_slashes=False)
 def hbnb():
         return 'HBNB'
 
 
-app.route ('/c/<text>')
-def text():
-        return 'C' + text.replace('_', ' ')
+app.route('/c/<text>', strict_slashes=False)
+def c_text(text):
+        text = unquote_plus(text.replace('_', ' '))
+        return (f"C {text}")
 
 
-app.route ('/python')
-app.route ('/<text>')
-def python_with_text(text = 'is cool'):
-        return 'Python' + text.replace('_',' ')
+app.route('/python/', defaults={'text': 'is_cool'}, strict_slashes=False)
+app.route('/python/<text>', strict_slashes=False)
+def python_with_text(text):
+        text = unquote_plus(text.replace('_', ' '))
+        return (f"Python {text}")
 
 
 if __name__ == '__main__':
-    app.url_map.strict_slashes = False
     app.run(host='0.0.0.0', port=5000)
