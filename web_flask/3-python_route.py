@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""Start a Flask app
-"""
+"""Start a Flask app"""
+
 
 from flask import Flask
 from urllib.parse import unquote_plus
 
 app = Flask(__name__)
+
 
 
 app.route('/', strict_slashes=False)
