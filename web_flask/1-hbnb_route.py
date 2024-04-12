@@ -7,10 +7,16 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello_flask():
+def hello():
     """Return string when route queried
     """
     return 'Hello HBNB!'
+
+@app.route('/hbnb')
+def hbnb():
+    """Return string when route queried
+    """
+    return 'HBNB'
 
 
 if __name__ == '__main__':
