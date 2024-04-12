@@ -1,24 +1,30 @@
 #!/usr/bin/python3
-"""Start a Flask app
+"""Start web application with two routings
 """
 
 from flask import Flask
 app = Flask(__name__)
 
 
-app.route ('/')
+@app.route('/')
 def hello():
-        return 'Hello HBNB!'
+    """Return string when route queried
+    """
+    return 'Hello HBNB!'
 
 
-app.route ('/hbnb')
+@app.route('/hbnb')
 def hbnb():
-        return 'HBNB'
+    """Return string when route queried
+    """
+    return 'HBNB'
 
 
-app.route ('/c/<text>')
-def text():
-        return 'C' + text.replace('_', ' ')
+@app.route('/c/<text>')
+def c_is_fun(text):
+    """Return reformatted text
+    """
+    return 'C ' + text.replace('_', ' ')
 
 
 if __name__ == '__main__':
