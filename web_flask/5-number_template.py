@@ -6,17 +6,6 @@ from flask import render_template
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
-""" App route section
-    Add a second route /hbnb:
-    display “HBNB”
-
-    Add a third route /c/<text>:
-    display “C ” followed by the value of the text variable
-    (replace underscore _ symbols with a space ) "
-
-    Add a fourth route /python/(<text>):
-    display “Python ”, followed by the value of the text variable"""""
-
 
 @app.route('/')
 def hello():
