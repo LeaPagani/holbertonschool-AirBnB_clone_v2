@@ -2,7 +2,8 @@
 """Start web application with two routings
 """
 
-from flask import Flask, render_template
+from flask import Flask
+from flask import render_template
 app = Flask(__name__)
 
 
